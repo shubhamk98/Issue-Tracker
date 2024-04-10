@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "./NavBar";
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
+import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Issue Tracker",
@@ -16,10 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body>
-        <NavBar />
-        {children}
+        <Theme appearance="light" accentColor="crimson">
+          <NavBar />
+          <main className="pl-8">{children}</main>
+          <Toaster position="top-right"/>
+        </Theme>
       </body>
     </html>
   );

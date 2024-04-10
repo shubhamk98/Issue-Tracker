@@ -20,7 +20,7 @@ const NavBar = () => {
   const currentPath = usePathname();
 
   return (
-    <nav className="flex justify-between items-center h-14 border-b-[1px] px-8">
+    <nav className="flex justify-between items-center h-14 border-b-[1px] px-8 mb-6">
       <Link href="/">
         <FaBug className="text-2xl" />
       </Link>
@@ -31,7 +31,7 @@ const NavBar = () => {
               href={val.href}
               className={`${
                 val.href === currentPath ? " text-gray-400" : " text-gray-800"
-              } font-semibold hover:text-gray-400`}
+              }  hover:text-gray-400`}
             >
               {val.label}
             </Link>
