@@ -5,8 +5,6 @@ import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import { Toaster } from "react-hot-toast";
 
-
-
 export const metadata: Metadata = {
   title: "Issue Tracker",
   description: "Track all your issue at one place",
@@ -18,12 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
+    <html lang="en">
       <body>
         <Theme appearance="light" accentColor="crimson">
           <NavBar />
-          <main className="pl-8">{children}</main>
-          <Toaster position="top-right"/>
+          <main className=" px-4 md:px-8">{children}</main>
+          <Toaster />
         </Theme>
       </body>
     </html>
