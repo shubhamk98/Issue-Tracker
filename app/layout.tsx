@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Theme appearance="light" accentColor="crimson">
+        <Theme appearance="light" accentColor="violet">
           <NavBar />
           <main className=" px-4 md:px-8">{children}</main>
           <Toaster />
