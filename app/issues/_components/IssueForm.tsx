@@ -32,11 +32,13 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
     try {
       if (issue) {
         await axios.patch("/api/issues/" + issue.id, data);
+        toast.remove(toastId);
+        toast.success("Issue updated successfully!");
+      } else {
+        await axios.post("/api/issues", data);
+        toast.remove(toastId);
+        toast.success("Issue created successfully!");
       }
-
-      await axios.post("/api/issues", data);
-      toast.remove(toastId);
-      toast.success("Issue created successfully!");
 
       router.push("/issues");
 

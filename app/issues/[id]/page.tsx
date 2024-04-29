@@ -32,7 +32,7 @@ const IssueDetailsPage = async ({ params: { id } }: Props) => {
               <Pencil2Icon />
             </Button>
           </Link>
-          <DeleteButton />
+          <DeleteButton issueId={issue.id} />
         </Flex>
       </Flex>
       <div className="my-4 flex flex-col gap-3 ">
